@@ -1,32 +1,46 @@
+import { useState, useEffect } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/bur.png"; // <-- Add your logo path here
-import ReactPlayer from "react-player";
+
+const slides = [
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1613490908578-1a5c68b37651?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80"
+];
 
 export default function Hero() {
-  return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 lg:px-10 pt-28 sm:pt-32 lg:pt-25 pb-20 overflow-hidden">
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-      {/* Background Video */}
-      <div className="absolute inset-0 overflow-hidden bg-black flex justify-center items-center">
-        <div className="absolute top-1/2 left-1/2 w-[300vw] h-[300vh] min-w-[150vw] min-h-[150vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none sm:w-[150vw] sm:h-[150vh] opacity-70">
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=4eQ6_ycFOng"
-            playing={true}
-            loop={true}
-            muted={true}
-            playsinline={true}
-            width="100%"
-            height="100%"
-            config={{
-              youtube: {
-                playerVars: { showinfo: 0, controls: 0, rel: 0, modestbranding: 1, disablekb: 1, playsinline: 1 }
-              }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 lg:px-10 pt-28 sm:pt-32 lg:pt-25 pb-20 overflow-hidden bg-black">
+
+      {/* Background Image Slider */}
+      <div className="absolute inset-0 overflow-hidden">
+        {slides.map((slide, index) => (
+          <motion.img
+            key={index}
+            src={slide}
+            alt="Luxury Real Estate"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ 
+              opacity: index === currentSlide ? 0.6 : 0, 
+              scale: index === currentSlide ? 1 : 1.1 
             }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
           />
-        </div>
+        ))}
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 pointer-events-none"></div>
       </div>
 
       {/* Floating Soft Glow */}
