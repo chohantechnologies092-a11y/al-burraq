@@ -3,37 +3,45 @@ import { FaHandshake, FaLightbulb, FaChartLine } from "react-icons/fa";
 
 export default function AboutPage() {
   return (
-    <div className="w-full bg-white text-gray-900 font-sans overflow-x-hidden pt-32"> {/* Navbar ke neeche gap */}
+    <div className="w-full bg-white text-gray-900 font-sans overflow-x-hidden pt-20"> {/* Navbar gap adjusted */}
 
-      {/* HERO */}
-      <section className="relative py-24 px-6 lg:px-20 text-center max-w-7xl mx-auto">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight"
-        >
-          About <span className="text-orange-500">Paradise Valley</span>
-        </motion.h1>
+      {/* PREMIUM HERO */}
+      <section className="relative w-full bg-[#0B0F17] pt-24 pb-48 px-6 lg:px-20 text-center overflow-hidden">
+        {/* Abstract Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto mt-10">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight tracking-tighter"
+          >
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Al Burraq</span>
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-3xl mx-auto text-lg md:text-xl text-gray-700"
-        >
-          Delivering luxury real estate solutions blending innovation, trust, and expertise — creating spaces where dreams become reality.
-        </motion.p>
-
-        <motion.img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" // Nayi clear modern building image
-          alt="Modern luxury building"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mx-auto mt-12 rounded-3xl shadow-xl max-w-full h-auto"
-        />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed"
+          >
+            Delivering luxury real estate solutions blending innovation, trust, and expertise — creating spaces where dreams become reality.
+          </motion.p>
+        </div>
       </section>
+
+      {/* Hero Image Overlay */}
+      <div className="relative z-20 max-w-6xl mx-auto px-6 lg:px-12 -mt-32 mb-24">
+        <motion.img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80"
+          alt="Modern luxury building"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] w-full h-[300px] md:h-[500px] object-cover border-8 border-white"
+        />
+      </div>
 
       {/* OUR STORY */}
       <section className="py-24 px-6 lg:px-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
@@ -58,7 +66,7 @@ export default function AboutPage() {
         >
           <h2 className="text-4xl font-bold mb-6">Our Story</h2>
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Paradise Valley started with a vision to redefine luxury living by creating exclusive communities that merge elegance with comfort and smart design.
+            Al Burraq started with a vision to redefine luxury living by creating exclusive communities that merge elegance with comfort and smart design.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
             Over the years, we have grown by delivering quality, trust, and tailored experiences to our valued clients. Our mission is to build not just homes, but lifestyles.
@@ -94,7 +102,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TEAM */}
+      {/* TEAM 
       <section className="py-24 px-6 lg:px-20 max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-12">Meet Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
@@ -125,13 +133,14 @@ export default function AboutPage() {
 
         </div>
       </section>
+      */}
 
       {/* WHY CHOOSE US */}
       <section className="bg-white py-24 px-6 lg:px-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
         <div>
           <h2 className="text-4xl font-bold mb-6">Why Choose Us?</h2>
           <ul className="list-disc list-inside space-y-4 text-gray-700 text-lg leading-relaxed">
-            <li>Over 15 years of experience in luxury real estate.</li>
+            <li>Over 25+ years of experience in luxury real estate.</li>
             <li>Trusted by hundreds of happy homeowners and investors.</li>
             <li>Exclusive properties in prime locations.</li>
             <li>Personalized service and expert guidance every step of the way.</li>

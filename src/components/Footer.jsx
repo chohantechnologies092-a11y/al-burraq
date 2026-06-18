@@ -20,6 +20,10 @@ export default function Footer() {
           <p className="mt-6 text-gray-400 leading-relaxed max-w-xs">
             Strategic digital marketing & property growth solutions designed to drive visibility, leads and real ROI.
           </p>
+          <div className="mt-4 text-gray-400">
+            <p className="hover:text-orange-400 transition cursor-pointer">sajidalburraq@gmail.com</p>
+            <p className="hover:text-orange-400 transition cursor-pointer mt-1">+92 302 5787878</p>
+          </div>
         </div>
 
         {/* Company */}
@@ -75,11 +79,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="mt-20 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between text-gray-500 text-sm relative z-10">
+      <div className="mt-20 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm relative z-10 gap-4">
 
         <p>© 2026 Al Burraq Marketing. All rights reserved.</p>
 
-        <div className="flex gap-6 mt-4 md:mt-0">
+        <p className="text-center">
+          Powered by <a href="https://devlyxsolutions.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-500 font-semibold transition-colors">Devlyx Solutions</a>
+        </p>
+
+        <div className="flex gap-6">
           <span className="hover:text-orange-400 cursor-pointer">Privacy Policy</span>
           <span className="hover:text-orange-400 cursor-pointer">Terms & Conditions</span>
         </div>

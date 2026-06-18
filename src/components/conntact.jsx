@@ -38,7 +38,7 @@ export default function Conntact() {
                 Call Us
               </p>
               <h3 className="text-2xl font-bold mt-1">
-                +44 (7456) 285429
+                +92 302 5787878
               </h3>
             </div>
 
@@ -47,7 +47,7 @@ export default function Conntact() {
                 Email
               </p>
               <h3 className="text-2xl font-bold mt-1">
-                sales@paradisevalley.com
+                sajidalburraq@gmail.com
               </h3>
             </div>
 
@@ -66,51 +66,69 @@ export default function Conntact() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-6"
         >
+          <form 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const data = Object.fromEntries(formData.entries());
+              const text = `*New Lead from Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Company:* ${data.company || 'N/A'}%0A*Phone:* ${data.phone}%0A*Budget:* ${data.budget}%0A*Message:* ${data.message}`;
+              window.open(`https://wa.me/923025787878?text=${text}`, '_blank');
+            }} 
+            className="space-y-6"
+          >
 
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
-          />
-
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
-          />
-
-          <div className="grid grid-cols-2 gap-6">
             <input
               type="text"
-              placeholder="Company name"
+              name="name"
+              required
+              placeholder="Name"
               className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
             />
+
             <input
-              type="text"
-              placeholder="Phone"
+              type="email"
+              name="email"
+              required
+              placeholder="Email"
               className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
             />
-          </div>
 
-          <select className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition">
-            <option>Select Investment Budget</option>
-            <option>$200k - $300k</option>
-            <option>$300k - $500k</option>
-            <option>$500k+</option>
-          </select>
+            <div className="grid grid-cols-2 gap-6">
+              <input
+                type="text"
+                name="company"
+                placeholder="Company name"
+                className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+              />
+              <input
+                type="text"
+                name="phone"
+                required
+                placeholder="Phone"
+                className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+              />
+            </div>
 
-          <textarea
-            rows="5"
-            placeholder="Tell us about your property requirements..."
-            className="w-full px-6 py-4 rounded-3xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
-          ></textarea>
+            <select name="budget" className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition">
+              <option value="">Select Investment Budget</option>
+              <option value="$200k - $300k">$200k - $300k</option>
+              <option value="$300k - $500k">$300k - $500k</option>
+              <option value="$500k+">$500k+</option>
+            </select>
 
-          <button className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold shadow-lg transition">
-            Submit Inquiry
-          </button>
+            <textarea
+              name="message"
+              rows="5"
+              required
+              placeholder="Tell us about your property requirements..."
+              className="w-full px-6 py-4 rounded-3xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+            ></textarea>
 
+            <button type="submit" className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold shadow-lg transition">
+              Submit Inquiry
+            </button>
+          </form>
         </motion.div>
 
       </div>

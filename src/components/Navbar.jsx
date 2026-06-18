@@ -118,8 +118,8 @@ export default function Navbar() {
                 </div>
                 <div>
                   <h4 className="text-[10px] font-black uppercase tracking-widest text-orange-600 mb-4">Get In Touch</h4>
-                  <p className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors">hello@devlyx.com</p>
-                  <p className="text-xl font-bold text-gray-900">+92 300 0000000</p>
+                  <p className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors">sajidalburraq@gmail.com</p>
+                  <p className="text-xl font-bold text-gray-900">+92 302 5787878</p>
                 </div>
               </div>
             </div>
