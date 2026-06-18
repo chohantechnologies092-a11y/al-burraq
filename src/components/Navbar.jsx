@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiOutlineMenuAlt4 } from "react-icons/hi"; // Mazeed minimal icon
 import { VscClose } from "react-icons/vsc";
-import { FiArrowUpRight, FiPhoneCall } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import bur from "../assets/bur.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);

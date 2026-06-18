@@ -183,18 +183,3 @@ function ValueCard({ icon, title, desc }) {
   );
 }
 
-function TeamMember({ img, name, role }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="rounded-2xl shadow-lg bg-white p-6 flex flex-col items-center cursor-default"
-    >
-      <img src={img} alt={name} className="w-32 h-32 rounded-full object-cover mb-4" />
-      <h3 className="text-xl font-semibold">{name}</h3>
-      <p className="text-orange-500">{role}</p>
-    </motion.div>
-  );
-}
