@@ -16,10 +16,9 @@ const Home = () => {
             <Backbone/>
             <FeaturedProperties />
             <ImpactStats />
-            <FeaturedProperties />
-            <Conntact/>
             <PropertyProcess />
             <PropertyTestimonials />
+            <Conntact/>
         </div>
     )
 }

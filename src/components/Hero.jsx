@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
 
       {/* Floating Soft Glow */}
-      <motion.div 
+      <motion.div
         className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-r from-red-500/20 to-orange-400/20 blur-3xl rounded-full"
         animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
         transition={{ duration: 6, repeat: Infinity }}
@@ -34,10 +34,10 @@ export default function Hero() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img 
-          src={logo} 
-          alt="AL Burraq Marketing Logo" 
-          className="w-32 h-auto sm:w-36 md:w-60"
+        <img
+          src={logo}
+          alt="AL Burraq Marketing Logo"
+          className="w-40 h-auto sm:w-56 md:w-72 lg:w-80"
         />
       </motion.div>
 
@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-4xl w-full space-y-6">
 
         {/* Company Name */}
-        <motion.h2 
+        <motion.h2
           className="text-3xl sm:text-3xl md:text-5xl font-extrabold text-white mb-4 relative inline-block"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -56,7 +56,7 @@ export default function Hero() {
         </motion.h2>
 
         {/* Heading */}
-        <motion.h1 
+        <motion.h1
           className="text-2xl sm:text-4xl lg:text-3xl font-bold text-white leading-tight"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
