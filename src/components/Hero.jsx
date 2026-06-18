@@ -1,9 +1,21 @@
+import { useState, useEffect } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import hme from "../assets/hme.mp4";
 import { motion } from "framer-motion";
 import logo from "../assets/bur.png"; // <-- Add your logo path here
 
 export default function Hero() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // YouTube iframe hamesha shuru me apna thumbnail dikhata hai.
+    // Is delay se thumbnail black me chup jayega aur jab play hoga tab fade-in hoga.
+    const timer = setTimeout(() => {
+      setVideoLoaded(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 lg:px-10 pt-28 sm:pt-32 lg:pt-25 pb-20 overflow-hidden">
 
@@ -12,7 +24,7 @@ export default function Hero() {
         <iframe
           src="https://www.youtube.com/embed/4eQ6_ycFOng?autoplay=1&mute=1&loop=1&playlist=4eQ6_ycFOng&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&playsinline=1"
           title="Background Video"
-          className="absolute top-1/2 left-1/2 w-[300vw] h-[300vh] min-w-[150vw] min-h-[150vh] -translate-x-1/2 -translate-y-1/2 opacity-70 pointer-events-none sm:w-[150vw] sm:h-[150vh]"
+          className={`absolute top-1/2 left-1/2 w-[300vw] h-[300vh] min-w-[150vw] min-h-[150vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none sm:w-[150vw] sm:h-[150vh] transition-opacity duration-1000 ${videoLoaded ? 'opacity-70' : 'opacity-0'}`}
           allow="autoplay; encrypted-media"
           frameBorder="0"
         />
