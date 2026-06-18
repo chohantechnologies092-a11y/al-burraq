@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 import logo from "../assets/bur.png"; // <-- Add your logo path here
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 
 export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
