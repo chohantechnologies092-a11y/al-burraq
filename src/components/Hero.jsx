@@ -8,19 +8,16 @@ export default function Hero() {
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 lg:px-10 pt-28 sm:pt-32 lg:pt-25 pb-20 overflow-hidden">
 
       {/* Background Video */}
-      <div className="absolute inset-0">
-        <video
-          src={hme}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80"
-          className="w-full h-full object-cover object-center"
+      <div className="absolute inset-0 overflow-hidden bg-black">
+        <iframe
+          src="https://www.youtube.com/embed/4eQ6_ycFOng?autoplay=1&mute=1&loop=1&playlist=4eQ6_ycFOng&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&playsinline=1"
+          title="Background Video"
+          className="absolute top-1/2 left-1/2 w-[300vw] h-[300vh] min-w-[150vw] min-h-[150vh] -translate-x-1/2 -translate-y-1/2 opacity-70 pointer-events-none sm:w-[150vw] sm:h-[150vh]"
+          allow="autoplay; encrypted-media"
+          frameBorder="0"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 pointer-events-none"></div>
       </div>
 
       {/* Floating Soft Glow */}
