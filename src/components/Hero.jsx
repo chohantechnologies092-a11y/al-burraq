@@ -1,26 +1,23 @@
-import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 import logo from "../assets/bur.png"; // <-- Add your logo path here
 import ReactPlayer from "react-player";
 
 export default function Hero() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 lg:px-10 pt-28 sm:pt-32 lg:pt-25 pb-20 overflow-hidden">
 
       {/* Background Video */}
       <div className="absolute inset-0 overflow-hidden bg-black flex justify-center items-center">
-        <div className={`absolute top-1/2 left-1/2 w-[300vw] h-[300vh] min-w-[150vw] min-h-[150vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none sm:w-[150vw] sm:h-[150vh] transition-opacity duration-1000 ${videoLoaded ? 'opacity-70' : 'opacity-0'}`}>
+        <div className="absolute top-1/2 left-1/2 w-[300vw] h-[300vh] min-w-[150vw] min-h-[150vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none sm:w-[150vw] sm:h-[150vh] opacity-70">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=4eQ6_ycFOng"
             playing={true}
             loop={true}
             muted={true}
+            playsinline={true}
             width="100%"
             height="100%"
-            onReady={() => setVideoLoaded(true)}
             config={{
               youtube: {
                 playerVars: { showinfo: 0, controls: 0, rel: 0, modestbranding: 1, disablekb: 1, playsinline: 1 }
